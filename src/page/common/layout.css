@@ -20,10 +20,8 @@ label{
 input[type='checkbox']{
 	cursor: pointer;
 }
-.fa-user{
-	color: red;
-}
-/*  定宽布局 */
+
+
 .w{
 	width: 1080px;
 	margin: 0 auto;
@@ -84,8 +82,23 @@ input[type='checkbox']{
 	opacity: .5;
 	background: url("../../image/icon/loading.gif");
 }
+.panel{
+	padding: 10px;
+	margin-bottom: 10px;
+	background: #fff;
 
-
+}
+.panel .panel-title{
+	padding: 10px;
+	font-size: 14px;
+	color: #666;
+	font-weight: bold;
+	border-bottom: 1px bold #eee;
+}
+.panel .panel-body{
+	padding: 10px;
+	overflow: hidden;
+}
 
 
 

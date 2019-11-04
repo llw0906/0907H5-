@@ -35,6 +35,7 @@ var _mm = {
 		});
 	},
 	// 统一跳转到登录页面
+	// encodeURIComponent函数做了编码处理，解码的时候用decodeURIComponent
 	doLogin: function(){
 		window.location.href = './user-login.html?redirect=' + 
 		encodeURIComponent(window.location.href);
@@ -49,7 +50,8 @@ var _mm = {
 	getUrlParam: function(name){
 		var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)');
 		var result = window.location.search.substr(1).match(reg);
-		return result ? result[2] : null;
+		//decodeURIComponent对encodeURIComponent编码的字符串进行解码
+		return result ? decodeURIComponent(result[2]) : null;
 	},
 	// 渲染HTML模板函数
 	renderHtml: function(htmlTemplate, data){
@@ -68,7 +70,7 @@ var _mm = {
 	errorTips: function(msg){
 		alert(msg || '哪里不对了!');
 	},
-	// 字段的验证，支持非空，邮箱、手机的判断
+	// 【前端】字段的验证，支持非空，邮箱、手机的判断
 	validate: function(value, type){
 		var value = $.trim(value);
 		// 非空验证
@@ -92,6 +94,7 @@ var _mm = {
 	}
 };
 module.exports = _mm;
+
 
 
 
